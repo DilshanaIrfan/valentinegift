@@ -1,0 +1,114 @@
+/* Background Image */
+.memory-page {
+    background: url('images/we.jpg') no-repeat center center fixed;
+    background-size: cover;
+    height: 100vh;
+    width:100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    position: relative;
+}
+
+/* Title */
+.content h1 {
+    color: blue;
+    font-size: 3rem;
+    text-shadow: 2px 2px 10px rgba(178, 27, 27, 0.7);
+    position: absolute;
+    top: 0%;
+}
+/* Container for all images */
+.memory-container {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    height: 150vh;
+    overflow: hidden;
+}
+
+/* Style for each image */
+.memory-image {
+    width: 180px;          /* Adjust size of each image */
+    height: 300px;
+    border-radius: 10px;
+    object-fit: cover;
+    opacity: 0;
+    position: absolute;
+    animation: popUpVertical 1s ease-out forwards;
+}
+
+/* Vertical pop-up animation */
+@keyframes popUpVertical {
+    0% {
+        opacity: 0;
+        transform: translateY(100px);  /* Start below */
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);  /* End at the target position */
+    }
+}
+
+/* Position for each image (adjust based on how you want them to appear) */
+.memory-image:nth-child(1) {
+    top: 0%;
+    left: 10%;
+    animation-delay: 0s;
+}
+.memory-image:nth-child(2) {
+    top: 15%;
+    left: 25%;
+    animation-delay: 1s;
+}
+.memory-image:nth-child(3) {
+    top: 30%;
+    left: 40%;
+    animation-delay: 2s;
+}
+.memory-image:nth-child(4) {
+    top: 45%;
+    left: 55%;
+    animation-delay: 3s;
+}
+.memory-image:nth-child(5) {
+    top: 60%;
+    left: 70%;
+    animation-delay: 4s;
+}
+.memory-image:nth-child(6) {
+    top: 75%;
+    left:85%;
+    animation-delay: 5s;
+}
+.memory-image:nth-child(7) {
+    top: 90%;
+    left: 100%;
+    animation-delay: 6s;
+}
+.memory-image:nth-child(8) {
+    top: 105%;
+    left: 115%;
+    animation-delay: 7s;
+}
+.go-back-button {
+    display: inline-block;
+    text-decoration: none;
+    background-color: #ff4d4d; /* Red color */
+    color: white;
+    padding: 12px 20px;
+    border-radius: 10px;
+    font-size: 18px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+    position: absolute;
+    top: 20px;
+    left: 20px;
+}
+
+.go-back-button:hover {
+    background-color: #cc0000; /* Darker red */
+}

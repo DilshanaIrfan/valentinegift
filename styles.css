@@ -1,0 +1,280 @@
+/* Lavender background and center everything */
+body {
+    font-family: Arial, sans-serif;
+    background-color: lavender;
+    color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    overflow: hidden;
+    position: relative;
+}
+/* Background specific to the Opening page */
+.opening-page {
+    background-color: rgb(17, 5, 71); /* Lavender background */
+}
+/* Opening Page only - Heart animations */
+
+/* Animated hearts in the background */
+@keyframes hearts {
+    0% {
+        transform: scale(0);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(1.5);
+        opacity: 0;
+    }
+}
+
+body.opening-page::before {
+    content: "❤️";
+    font-size: 100px;
+    position: absolute;
+    top: -10%;
+    left: 50%;
+    animation: hearts 2s ease-in-out infinite;
+    color: red;
+    animation-delay: 0s;
+}
+
+body.opening-page::after {
+    content: "❤️";
+    font-size: 100px;
+    position: absolute;
+    bottom: -10%;
+    right: 50%;
+    animation: hearts 3s ease-in-out infinite;
+    color: pink;
+    animation-delay: 1s;
+}
+/* Twinkling stars effect */
+@keyframes twinkle {
+    0% { opacity: 0.2; transform: scale(1); }
+    50% { opacity: 1; transform: scale(1.3); }
+    100% { opacity: 0.2; transform: scale(1); }
+}
+/* Blue twinkling stars */
+.twinkling-star.blue {
+    position: absolute;
+    width: 6px;
+    height: 6px;
+    background-color: dodgerblue;
+    border-radius: 50%;
+    opacity: 0.8;
+    animation: twinkle 1.5s infinite ease-in-out;
+}
+/* Red twinkling stars */
+.twinkling-star.red {
+    position: absolute;
+    width: 6px;
+    height: 6px;
+    background-color: red; /* Red stars */
+    border-radius: 50%;
+    opacity: 0.8;
+    animation: twinkle 1.5s infinite ease-in-out;
+}
+/* Add more variation in stars */
+.twinkling-star:nth-child(odd) {
+    animation-duration: 1.3s; /* Randomize duration */
+}
+
+.twinkling-star:nth-child(even) {
+    animation-duration: 1.7s;
+}
+/* Centered question box with padding */
+.question-container {
+    text-align: center;
+    padding: 40px;
+    background-color: rgb(2, 23, 10);
+    border-radius: 20px;
+    box-shadow: 0px 4px 6px rgba(17, 219, 30, 0.2);
+    position: relative;
+    z-index: 2;
+}
+h3{
+    color: red; /* Change text color to white */
+    font-family: 'Dancing Script', cursive; /* Cute font */
+    font-size: 3rem;
+    margin: 0;
+}
+
+h1 {
+    color: white; /* Change text color to white */
+    font-family: 'Dancing Script', cursive; /* Cute font */
+    font-size: 3rem;
+    margin: 0;
+}
+/* Small hearts inside the container */
+.question-container::before {
+    content: "❤️";
+    font-size: 48px;
+    position: absolute;
+    top: 20px; 
+    left: 30px;
+    animation: floatHeart 4s infinite ease-in-out;
+}
+
+.question-container::after {
+    content: "❤️";
+    font-size: 24px;
+    position: absolute;
+    bottom: 10px; 
+    right: 10px;
+    animation: floatHeart 6s infinite ease-in-out;
+}
+
+/* Animation for floating hearts */
+@keyframes floatHeart {
+    0% { transform: translateY(0); opacity: 1; }
+    50% { transform: translateY(-10px); opacity: 0.8; }
+    100% { transform: translateY(0); opacity: 1; }
+}
+
+/* Cute cat image */
+.cat-image {
+    width: 200px;
+    height:150px;
+    margin: 20px;
+    border-radius: 10px;
+}
+
+/* Buttons with color styling */
+.button-container {
+    margin-top: 20px;
+}
+
+button {
+    padding: 15px 30px;
+    font-size: 20px;
+    border-radius: 9px;
+    border: rgb(128, 28, 205);
+    cursor: pointer;
+    margin: 10px;
+}
+
+.no-button {
+    background-color: red;
+    color: rgb(201, 194, 194);
+}
+
+.yes-button {
+    background-color: green;
+    color: white;
+}
+
+button:hover {
+    opacity: 0.9;
+}
+
+/* Background specific to the No page */
+.no-page {
+    background: url('images/no5.jpg') no-repeat center center fixed; /* Add your background image here */
+    background-size: cover; /* Ensures the image covers the entire page */
+    height: 100vh; /* Full height of the viewport */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+/* Style for the container holding the pop-up message */
+.no-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+/* Style for the pop-up message */
+.popup-message {
+    background-color: rgba(184, 189, 28, 0.7); /* Semi-transparent background for the pop-up */
+    color: white;
+    padding: 30px 40px;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3);
+    max-width: 500px;
+    width: 80%;
+    animation: popUp 0.6s ease-out;
+}
+
+/* Pop-up animation */
+@keyframes popUp {
+    0% { transform: scale(0); }
+    100% { transform: scale(1); }
+}
+
+/* Style for the "Go Back" button */
+.popup-message a {
+    text-decoration: none;
+    background-color: #7e0b49;
+    color: rgb(161, 154, 170);
+    padding: 10px 20px;
+    border-radius: 10px;
+    font-size: 1.2rem;
+    transition: background-color 0.3s ease;
+}
+
+.popup-message a:hover {
+    background-color: #086749;
+}
+
+/* Yes Page background and layout */
+.yes-page {
+    background: url('images/mine2.jpg') no-repeat center center fixed; /* Replace with your own background image */
+    background-size: cover;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+/* Yes Page container */
+.yes-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+/* Pop-up message style */
+.popup-message {
+    background-color: rgba(25, 15, 103, 0.8); /* Light background */
+    color: #f7f7f7;
+    padding: 40px 60px;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3);
+    max-width: 500px;
+    width: 80%;
+    animation: popUp 0.6s ease-out;
+}
+body {
+    font-family: 'Pacifico', cursive; /* Cute and romantic font */
+}
+
+/* Pop-up animation */
+@keyframes popUp {
+    0% { transform: scale(0); }
+    100% { transform: scale(1); }
+}
+
+
+/* "Go Back" button style */
+.go-back {
+    text-decoration: none;
+    background-color: #aa33ff;
+    color: rgb(19, 49, 140);
+    padding: 10px 20px;
+    border-radius: 10px;
+    font-size: 1.2rem;
+    transition: background-color 0.3s ease;
+}
+
+.go-back:hover {
+    background-color: #2d349a;
+}
