@@ -171,7 +171,7 @@ button:hover {
 
 /* Background specific to the No page */
 .no-page {
-    background: url('images/no5.jpg') no-repeat center center fixed; /* Add your background image here */
+    background: url('https://github.com/DilshanaIrfan/valentinegift/blob/main/no5.jpg?raw=true') no-repeat center center fixed; /* Add your background image here */
     background-size: cover; /* Ensures the image covers the entire page */
     height: 100vh; /* Full height of the viewport */
     display: flex;
